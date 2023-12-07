@@ -1,0 +1,43 @@
+#aboutPassword {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#predefinedPassword h2 {
+    text-align: center;
+}
+
+#optionsContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: start;
+    justify-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardContent ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cardContent ul li {
+    text-align: left;
+}
+
+.cardButton button {
+    display: inline-block;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js" defer></script>
+    <title>passGen</title>
+</head>
+
+<body>
+
+    <main>
+        <div id="navbar">
+            <ul>
+                <li class="appName">Password Generator</li>
+                <li class="navLinks"><a href="savedpasswords.html">Saved Passwords</a></li>
+                <li class="navLinks"><a href="index.html">Generator</a></li>
+            </ul>
+        </div>
+
+        <div id="aboutPassword">
+            <div id="selectApplication">
+                <label for="inputApplication">Which application are you generating the password for?</label>
+                <input type="text" id="inputApplication" placeholder="Instagram, Google, Facebook...">
+            </div>
+            <div id="displayPassword">
+                <h2 id="passwordGenerated">Your password will be shown here</h2>
+            </div>
+            <div id="savePassword">
+                <button id="savePasswordButton">Save password</button>
+            </div>
+        </div>
+
+        <section id="predefinedPassword">
+            <h2>Predefined Password</h2>
+            <div id="optionsContainer">
+                <div id="weakOption" class="card">
+                    <div class="cardContent">
+                        <h3>Weak Password</h3>
+                        <ul>
+                            <li>Lowercase letters</li>
+                            <li>Numbers</li>
+                            <li>Length: 8</li>
+                        </ul>
+                    </div>
+                    <div class="cardButton">
+                        <button id="generateButtonWeak">Generate</button>
+                    </div>
+                </div>
+                <div id="secureOption" class="card">
+                    <div class="cardContent">
+                        <h3>Secure Password</h3>
+                        <ul>
+                            <li>Uppercase letters</li>
+                            <li>Lowercase letters</li>
+                            <li>Numbers</li>
+                            <li>Length: 12</li>
+                        </ul>
+                    </div>
+                    <div class="cardButton">
+                        <button id="generateButtonSecure">Generate</button>
+                    </div>
+                </div>
+                <div id="strongOption" class="card">
+                    <div class="cardContent">
+                        <h3>Strong Password</h3>
+                        <ul>
+                            <li>Uppercase letters</li>
+                            <li>Lowercase letters</li>
+                            <li>Special characters</li>
+                            <li>Numbers</li>
+                            <li>Length: 15</li>
+                        </ul>
+                    </div>
+                    <div class="cardButton">
+                        <button id="generateButtonStrong">Generate</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="personalizedPassword">
+            <h2>Personalized Password</h2>
+            <div id="personalizedContainer">
+                <div class="personalizedItem">
+                    <input type="checkbox" id="uppercaseCheck">
+                    <label for="uppercaseCheck">Uppercase</label>
+                </div>
+                <div class="personalizedItem">
+                    <input type="checkbox" id="lowercaseCheck">
+                    <label for="lowercaseCheck">Lowercase</label>
+                </div>
+                <div class="personalizedItem">
+                    <input type="checkbox" id="specialCharCheck">
+                    <label for="specialCharCheck">Special Characters</label>
+                </div>
+                <div class="personalizedItem">
+                    <input type="checkbox" id="numbersCheck">
+                    <label for="numbersCheck">Numbers</label>
+                </div>
+                <div class="personalizedItem">
+                    <input type="number" id="lengthPersonalized" placeholder="Length" min="0" max="50">
+                    <p class="warning"></p>
+                </div>
+                <div class="personalizedItem">
+                    <button id="generateButtonPersonalized">Generate</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

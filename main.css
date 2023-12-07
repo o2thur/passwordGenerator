@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+#navbar {
+    background-color: #999;
+    overflow: hidden;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#navbar li {
+    display: inline-block;
+}
+
+#navbar .appName {
+    float: left;
+    /* Align the app name to the left */
+    color: white;
+    padding: 14px 16px;
+    margin: 0 100px;
+    text-decoration: none;
+}
+
+#navbar .navLinks:nth-child(2) {
+    margin-right: 100px;
+}
+
+#navbar li a:active {
+    background-color: #ddd;
+}
+
+#navbar .navLinks {
+    float: right;
+    /* Align the nav links to the right */
+}
+
+#navbar .navLinks li,
+#navbar .navLinks a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navbar .navLinks a:hover {
+    background-color: #ddd;
+    color: black;
+}
