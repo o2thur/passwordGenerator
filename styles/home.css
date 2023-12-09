@@ -40,7 +40,7 @@ h3 {
 
 #savePassword {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 #passwordGenerated {
@@ -156,4 +156,43 @@ h3 {
 .buttonPersonalizedContainer {
     display: flex;
     justify-content: center;
+}
+
+#customOption .cardContent {
+    display: flex;
+    align-items: self-start;
+}
+
+.cardButton button {
+    background-color: #cdcbff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.6);
+    transition: 0.5s ease
+}
+
+.cardButton button:hover {
+    background-color: #a9a7e0;
+    color: rgb(47, 47, 47);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+}
+
+#savePassword button {
+    background-color: #cdcbff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.6);
+    transition: 0.5s ease;
+}
+
+#savePassword button:hover {
+    background-color: #a9a7e0;
+    color: rgb(47, 47, 47);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
 }
