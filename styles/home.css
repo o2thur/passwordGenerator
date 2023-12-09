@@ -1,25 +1,79 @@
 #aboutPassword {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
+    text-align: left;
+}
+
+h1,
+h2,
+h3 {
+    color: #cdcbff
+}
+
+#selectApplication input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    /* color: #ddd; */
+}
+
+#selectApplication input:focus {
+    outline: none;
+    border-color: #8F7E4F;
+    box-shadow: 0 0 5px rgba(143, 126, 79, 0.7);
 }
 
 #predefinedPassword h2 {
     text-align: center;
 }
 
+#aboutPasswordContainer1,
+#aboutPasswordContainer2 {
+    width: 20%;
+}
+
+#savePassword {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#passwordGenerated {
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100%;
+    text-align: center;
+    color: #8c8189
+}
+
 #optionsContainer {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(4, 20%);
     align-items: start;
+    justify-content: center;
     justify-items: center;
 }
 
 .card {
+    background-color: #004953;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.6);
+    border-radius: 5px;
+    width: 190px;
+}
+
+.cardContent h3 {
+    color: white
 }
 
 .cardContent {
@@ -27,7 +81,49 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background-color: #4e4e4e80;
+    border-radius: 5px;
+    backdrop-filter: blur(2px);
+    padding: 10px;
 }
+
+#weakOption {
+    background-image: url('/images/weak-charlotte-may-5825395.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#secureOption {
+    background-image: url("/images/secure-allan-franca-carmo-3226281.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#strongOption {
+    background-image: url("/images/strong-dylann-hendricks-18658490.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#customOption {
+    background-image: url("/images/custom-markus-winkler-13548803.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#weakOption:hover .cardContent,
+#secureOption:hover .cardContent,
+#strongOption:hover .cardContent,
+#customOption:hover .cardContent {
+    opacity: 1;
+}
+
 
 .cardContent ul {
     list-style: none;
@@ -40,4 +136,24 @@
 
 .cardButton button {
     display: inline-block;
+}
+
+#personalizedPassword {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#generateButtonPersonalized {
+    display: flex;
+    justify-content: center;
+}
+
+#lengthPersonalized {
+    width: 100%;
+}
+
+.buttonPersonalizedContainer {
+    display: flex;
+    justify-content: center;
 }

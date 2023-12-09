@@ -1,11 +1,18 @@
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #001d21;
+    color: white;
+}
+
+section {
+    margin: 80px 0;
 }
 
 #navbar {
-    background-color: #999;
+    background-color: #001d21;
     overflow: hidden;
+    padding: 10px;
 }
 
 #navbar ul {
@@ -22,7 +29,7 @@ body {
 #navbar .appName {
     float: left;
     /* Align the app name to the left */
-    color: white;
+    color: #ffffff;
     padding: 14px 16px;
     margin: 0 100px;
     text-decoration: none;
@@ -33,7 +40,7 @@ body {
 }
 
 #navbar li a:active {
-    background-color: #ddd;
+    background-color: #524632;
 }
 
 #navbar .navLinks {
@@ -44,13 +51,15 @@ body {
 #navbar .navLinks li,
 #navbar .navLinks a {
     display: inline-block;
-    color: white;
+    color: #DEDBD8;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 #navbar .navLinks a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #002a2f;
+    border-radius: 10px;
+    color: white;
+    transition: 0.5s ease;
 }

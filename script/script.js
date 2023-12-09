@@ -109,6 +109,7 @@ $(document).ready(function () {
             alert("Error: at least one checkbox required")
         } else {
             passwordGenerated.text(password)
+            passwordGenerated.css('color', 'black')
             return passwordGenerated
         }
     }

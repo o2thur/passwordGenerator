@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/home.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="script.js" defer></script>
+    <script src="../script/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>passGen</title>
 </head>
 
@@ -18,25 +21,30 @@
             <ul>
                 <li class="appName">Password Generator</li>
                 <li class="navLinks"><a href="savedpasswords.html">Saved Passwords</a></li>
-                <li class="navLinks"><a href="index.html">Generator</a></li>
+                <li class="navLinks"><a href="home.html">Generator</a></li>
             </ul>
         </div>
 
-        <div id="aboutPassword">
-            <div id="selectApplication">
-                <label for="inputApplication">Which application are you generating the password for?</label>
-                <input type="text" id="inputApplication" placeholder="Instagram, Google, Facebook...">
+        <section id="aboutPassword">
+            <div id="aboutPasswordContainer1">
+                <div id="selectApplication">
+                    <label for="inputApplication">Insert the application:</label>
+                    <input type="text" id="inputApplication" placeholder="Instagram, Google, Facebook...">
+                </div>
             </div>
-            <div id="displayPassword">
-                <h2 id="passwordGenerated">Your password will be shown here</h2>
+            <div id="aboutPasswordContainer2">
+                <p>Password generated:</p>
+                <div id="displayPassword">
+                    <h2 id="passwordGenerated">Select a option...</h2>
+                </div>
+                <div id="savePassword">
+                    <button id="savePasswordButton">Save password</button>
+                </div>
             </div>
-            <div id="savePassword">
-                <button id="savePasswordButton">Save password</button>
-            </div>
-        </div>
+        </section>
 
         <section id="predefinedPassword">
-            <h2>Predefined Password</h2>
+            <h2>Password Generation Options</h2>
             <div id="optionsContainer">
                 <div id="weakOption" class="card">
                     <div class="cardContent">
@@ -80,33 +88,32 @@
                         <button id="generateButtonStrong">Generate</button>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="personalizedPassword">
-            <h2>Personalized Password</h2>
-            <div id="personalizedContainer">
-                <div class="personalizedItem">
-                    <input type="checkbox" id="uppercaseCheck">
-                    <label for="uppercaseCheck">Uppercase</label>
-                </div>
-                <div class="personalizedItem">
-                    <input type="checkbox" id="lowercaseCheck">
-                    <label for="lowercaseCheck">Lowercase</label>
-                </div>
-                <div class="personalizedItem">
-                    <input type="checkbox" id="specialCharCheck">
-                    <label for="specialCharCheck">Special Characters</label>
-                </div>
-                <div class="personalizedItem">
-                    <input type="checkbox" id="numbersCheck">
-                    <label for="numbersCheck">Numbers</label>
-                </div>
-                <div class="personalizedItem">
-                    <input type="number" id="lengthPersonalized" placeholder="Length" min="0" max="50">
-                    <p class="warning"></p>
-                </div>
-                <div class="personalizedItem">
-                    <button id="generateButtonPersonalized">Generate</button>
+                <div id="customOption" class="card">
+                    <div class="cardContent">
+                        <h3>Custom Password</h3>
+                        <div class="personalizedItem">
+                            <input type="checkbox" id="uppercaseCheck">
+                            <label for="uppercaseCheck">Uppercase</label>
+                        </div>
+                        <div class="personalizedItem">
+                            <input type="checkbox" id="lowercaseCheck">
+                            <label for="lowercaseCheck">Lowercase</label>
+                        </div>
+                        <div class="personalizedItem">
+                            <input type="checkbox" id="specialCharCheck">
+                            <label for="specialCharCheck">Special Characters</label>
+                        </div>
+                        <div class="personalizedItem">
+                            <input type="checkbox" id="numbersCheck">
+                            <label for="numbersCheck">Numbers</label>
+                        </div>
+                        <div class="personalizedItem">
+                            <input type="number" id="lengthPersonalized" placeholder="Length" min="0" max="50">
+                        </div>
+                        <div class="cardButton">
+                            <button id="generateButtonPersonalized">Generate</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
