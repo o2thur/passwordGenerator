@@ -22,7 +22,8 @@ $(document).ready(function () {
         numberCharacters = '0123456789',
         specialCharacters = '!@#$%&*<>?',
         passwordGenerated = $("#passwordGenerated"),
-        warning = $(".warning");
+        warning = $(".warning"),
+        savedPasswordsBox = $("#savedPasswordsBox");
     let uppercaseCheck,
         lowercaseCheck,
         specialCharCheck,
@@ -114,24 +115,70 @@ $(document).ready(function () {
         }
     }
 
+    if (localStorage.getItem('savedPasswords')) {
+        savedPasswords = JSON.parse(localStorage.getItem('savedPasswords'))
+    }
+
     function storeApplication() {
         applicationName = $("#inputApplication").val().toLowerCase()
         data = { app: `${applicationName}`, password: `${passwordGenerated.text()}` }
 
-        savedPasswords.forEach((application) => {
-            if (!application.includes(applicationName)) {
-                console.log("hey")
-            }
+        // check if any element in the array satisfies the condition
+        const appPasswordExists = savedPasswords.some((application) => {
+            return application.app === applicationName
         })
+        if (!appPasswordExists && applicationName) {
+            savedPasswords.push(data);
+            localStorage.setItem("savedPasswords", JSON.stringify(savedPasswords));
+        } else if (appPasswordExists) {
+            alert("You already have a password for this application");
+            // passwordExists()
+        } else {
+            alert("Error: provide the application's name");
+        }
+    }
 
-        // if (application) {
-        //     savedPasswords.push(data)
-        //     localStorage.setItem("savedPasswords", JSON.stringify(savedPasswords))
-        // } else {
-        //     alert("Error: provide the application's name")
-        // }
-        console.log(savedPasswords)
+    function appendSavedPassword() {
+        savedPasswordsBox.html('')
 
+        savedPasswords.forEach((password) => {
+            const displayInfoContainer = $("<div>").addClass("displayInfoContainer")
+
+            const displayInfoItem = $("<div>").addClass("displayInfoItem")
+            const displayInfoItem2 = displayInfoItem.clone();
+
+            const savedPasswordItem = $("<div>").addClass("savedPassword")
+
+            const savedApplicationName = $("<p>").text(password.app)
+
+            const trashBinIcon = $("<i>").addClass("fa-solid fa-trash").on("click", () => {
+                localStorage.removeItem(password)
+                savedPasswords = savedPasswords.filter(item => item !== password)
+                localStorage.setItem("savedPasswords", JSON.stringify(savedPasswords))
+                appendSavedPassword()
+            })
+
+            const passwordDisplayed = $("<p>").text(password.password)
+
+            const displayPasswordContainer = $("<div>").addClass("displayPasswordContainer d-none")
+
+            const eyeIcon = $("<i>").addClass("fa-solid fa-eye").on("click", () => {
+                if (displayPasswordContainer.hasClass("d-none")) {
+                    displayPasswordContainer.removeClass("d-none")
+                } else {
+                    displayPasswordContainer.addClass("d-none")
+                }
+            })
+            displayInfoItem.append(savedApplicationName)
+            displayInfoContainer.append(displayInfoItem)
+            displayInfoItem2.append(trashBinIcon)
+            displayInfoItem2.append(eyeIcon)
+            displayInfoContainer.append(displayInfoItem2)
+            savedPasswordItem.append(displayInfoContainer)
+            savedPasswordItem.append(displayPasswordContainer)
+            displayPasswordContainer.append(passwordDisplayed)
+            savedPasswordsBox.append(savedPasswordItem)
+        })
     }
 
     weakButton.on("click", () => {
@@ -158,5 +205,7 @@ $(document).ready(function () {
     saveButton.on("click", () => {
         storeApplication()
     })
+
+    appendSavedPassword()
 
 });
