@@ -23,7 +23,8 @@ $(document).ready(function () {
         specialCharacters = '!@#$%&*<>?',
         passwordGenerated = $("#passwordGenerated"),
         warning = $(".warning"),
-        savedPasswordsBox = $("#savedPasswordsBox");
+        savedPasswordsBox = $("#savedPasswordsBox"),
+        deletePopupContainer = $("#deletePopupContainer");
     let uppercaseCheck,
         lowercaseCheck,
         specialCharCheck,
@@ -130,8 +131,22 @@ $(document).ready(function () {
         if (!appPasswordExists && applicationName) {
             savedPasswords.push(data);
             localStorage.setItem("savedPasswords", JSON.stringify(savedPasswords));
+            alert("Password saved")
         } else if (appPasswordExists) {
-            alert("You already have a password for this application");
+            let checker = confirm("You already have a password for this application. Do you want to overwrite it?");
+            if (checker) {
+                let confirmation = confirm("Are you sure? This will delete the record of your older password forever")
+                if (confirmation) {
+                    savedPasswords.forEach((password, index) => {
+                        if (applicationName == password.app) {
+                            savedPasswords[index] = data;
+                            localStorage.setItem("savedPasswords", JSON.stringify(savedPasswords));
+                            alert("Password saved")
+                            return
+                        }
+                    })
+                }
+            }
             // passwordExists()
         } else {
             alert("Error: provide the application's name");
@@ -152,10 +167,14 @@ $(document).ready(function () {
             const savedApplicationName = $("<p>").text(password.app)
 
             const trashBinIcon = $("<i>").addClass("fa-solid fa-trash").on("click", () => {
-                localStorage.removeItem(password)
-                savedPasswords = savedPasswords.filter(item => item !== password)
-                localStorage.setItem("savedPasswords", JSON.stringify(savedPasswords))
-                appendSavedPassword()
+                let checker = confirm("Are you sure you want to delete this password?")
+                if (checker) {
+                    localStorage.removeItem(password)
+                    savedPasswords = savedPasswords.filter(item => item !== password)
+                    localStorage.setItem("savedPasswords", JSON.stringify(savedPasswords))
+                    appendSavedPassword()
+                }
+
             })
 
             const passwordDisplayed = $("<p>").text(password.password)
@@ -179,6 +198,10 @@ $(document).ready(function () {
             displayPasswordContainer.append(passwordDisplayed)
             savedPasswordsBox.append(savedPasswordItem)
         })
+    }
+
+    function deletePassword() {
+
     }
 
     weakButton.on("click", () => {

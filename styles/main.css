@@ -22,6 +22,11 @@ section {
     overflow: hidden;
 }
 
+#navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
 #navbar li {
     display: inline-block;
 }
