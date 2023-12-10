@@ -9,7 +9,7 @@
 h1,
 h2,
 h3 {
-    color: #cdcbff
+    color: #EE5622
 }
 
 #selectApplication input {
@@ -112,7 +112,7 @@ h3 {
 }
 
 #customOption {
-    background-image: url("/images/custom-markus-winkler-13548803.jpg");
+    background-image: url("/images/custom-johannes-havn-1716008.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -165,7 +165,7 @@ h3 {
 }
 
 .cardButton button {
-    background-color: #cdcbff;
+    background-color: #EE5622;
     border: none;
     padding: 8px 16px;
     border-radius: 10px;
@@ -182,7 +182,7 @@ h3 {
 }
 
 #savePassword button {
-    background-color: #cdcbff;
+    background-color: #EE5622;
     border: none;
     padding: 8px 16px;
     border-radius: 10px;
