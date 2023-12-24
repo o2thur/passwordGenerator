@@ -1,6 +1,4 @@
-# passGen - Password Generator
-
-## [Access the page](https://o2thur.github.io/passwordGenerator)
+# [passGen - Password Generator](https://o2thur.github.io/passwordGenerator)
 
 ## ATTENTION:
 This application has no security levels. The passwords are stored in your localStorage.
