@@ -91,28 +91,28 @@ h3 {
 }
 
 #weakOption {
-    background-image: url('/images/weak-charlotte-may-5825395.jpg');
+    background-image: url("images/weak-charlotte-may-5825395.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
 #secureOption {
-    background-image: url("/images/secure-allan-franca-carmo-3226281.jpg");
+    background-image: url("images/secure-allan-franca-carmo-3226281.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
 #strongOption {
-    background-image: url("/images/strong-dylann-hendricks-18658490.jpg");
+    background-image: url("images/strong-dylann-hendricks-18658490.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
 #customOption {
-    background-image: url("/images/custom-johannes-havn-1716008.jpg");
+    background-image: url("images/custom-johannes-havn-1716008.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
